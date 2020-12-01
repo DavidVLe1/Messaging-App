@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://localhost/namesdb');
+var db = mongoose.connect('mongodb://localhost/messagesdb');
 
 
 app.use(express.json());
