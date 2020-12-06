@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MessageService} from '../_services/messaging.service';
 
 @Component({
   selector: 'app-messaging',
@@ -8,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 
 export class MessagingComponent implements OnInit {
 
-  constructor() { }
+  newMessage: string;
+  User: string;
+  messageList: string[] = [''];
 
-  ngOnInit(): void {
+  constructor(private messageService: MessageService) {
+  }
+
+  sendMessage(): void {
+    this.messageService.sendMessage(this.newMessage, this.User);
+    this.newMessage = '';
+  }
+
+  ngOnInit() {
+    this.messageService.getMessages().subscribe((message: string) => {
+      this.messageList.push(message);
+    });
   }
 
 }
