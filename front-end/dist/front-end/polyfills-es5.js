@@ -456,30 +456,6 @@
     },
 
     /***/
-    1:
-    /*!****************************************************************************************************************************************************!*\
-      !*** multi ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js zone.js/dist/zone-legacy ./src/polyfills.ts ***!
-      \****************************************************************************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function _(module, exports, __webpack_require__) {
-      __webpack_require__(
-      /*! E:\Users\demon\Downloads\FullstackFinal-master-main\FullstackFinal-master-main\front-end\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
-      "mRIq");
-
-      __webpack_require__(
-      /*! zone.js/dist/zone-legacy */
-      "R0gw");
-
-      module.exports = __webpack_require__(
-      /*! E:\Users\demon\Downloads\FullstackFinal-master-main\FullstackFinal-master-main\front-end\src\polyfills.ts */
-      "hN/g");
-      /***/
-    },
-
-    /***/
     "14Sl":
     /*!******************************************************************************!*\
       !*** ./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js ***!
@@ -755,6 +731,30 @@
         // https://tc39.github.io/ecma262/#sec-array.prototype.reduceright
         right: createMethod(true)
       };
+      /***/
+    },
+
+    /***/
+    2:
+    /*!****************************************************************************************************************************************************!*\
+      !*** multi ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js zone.js/dist/zone-legacy ./src/polyfills.ts ***!
+      \****************************************************************************************************************************************************/
+
+    /*! no static exports found */
+
+    /***/
+    function _(module, exports, __webpack_require__) {
+      __webpack_require__(
+      /*! C:\Users\Owner\Documents\GitHub\FullstackFinal-master\front-end\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
+      "mRIq");
+
+      __webpack_require__(
+      /*! zone.js/dist/zone-legacy */
+      "R0gw");
+
+      module.exports = __webpack_require__(
+      /*! C:\Users\Owner\Documents\GitHub\FullstackFinal-master\front-end\src\polyfills.ts */
+      "hN/g");
       /***/
     },
 
@@ -18928,6 +18928,6 @@
       });
       /***/
     }
-  }, [[1, "runtime"]]]);
+  }, [[2, "runtime"]]]);
 })();
 //# sourceMappingURL=polyfills-es5.js.map

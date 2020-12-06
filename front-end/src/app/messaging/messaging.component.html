@@ -1,23 +1,18 @@
-<p>messaging works!</p>
-
-
 <body>
 <div id ="chat">
     <div>
-        <form id="nickname" class="wrap">
-            <p>Please type in your nickname and hit enter.</p>
-            <input id="nick">
-        </form>
+        <input [(ngModel)]="User" (keyup.enter)="sendMessage()">
+        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
+        <button (click)="sendMessage()">Login</button>
     </div>
-    <div id="messages">
-        <div id="nicknames"></div>
-        <div id="lines"></div>
+
+    <div *ngFor="let message of messageList">
+        <span>{{message}}</span>
     </div>
-    <form id="send-message">
-        <input id="message">
-        <button>Send</button>
-    </form>
+
 </div>
+
+
 
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
