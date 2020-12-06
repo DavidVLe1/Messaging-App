@@ -1,12 +1,15 @@
 <body>
 <div id ="chat">
-    <div>
-        <input [(ngModel)]="User" (keyup.enter)="sendMessage()">
-        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
-        <button (click)="sendMessage()">Login</button>
+    <div align = "center">
+        <label for="userName">Name: </label>
+        <input id="userName" [(ngModel)]="User" (keyup.enter)="sendMessage()">
+        <br>
+        <label for="message">Message: </label>
+        <input id="message" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
+        <button (click)="sendMessage()">Send Message</button>
     </div>
 
-    <div *ngFor="let message of messageList">
+    <div *ngFor="let message of messageList" align = "center">
         <span>{{message}}</span>
     </div>
 
