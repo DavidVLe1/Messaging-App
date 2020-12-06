@@ -202,6 +202,12 @@
       var _messaging_messaging_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./messaging/messaging.component */
       "qSur");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/forms */
+      "3Pt+");
 
       var AppModule = function AppModule() {
         _classCallCheck(this, AppModule);
@@ -216,13 +222,13 @@
           return new (t || AppModule)();
         },
         providers: [],
-        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]]]
+        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _messaging_messaging_component__WEBPACK_IMPORTED_MODULE_4__["MessagingComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]]
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]]
         });
       })();
       /*@__PURE__*/
@@ -233,7 +239,7 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
           args: [{
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _messaging_messaging_component__WEBPACK_IMPORTED_MODULE_4__["MessagingComponent"]],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
           }]
@@ -268,22 +274,41 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _services_messaging_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../_services/messaging.service */
+      "xEyX");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/forms */
+      "3Pt+");
 
       var MessagingComponent = /*#__PURE__*/function () {
-        function MessagingComponent() {
+        // public newUsername;
+        // public usernames;
+        function MessagingComponent(messagingService) {
           _classCallCheck(this, MessagingComponent);
+
+          this.messagingService = messagingService;
         }
 
         _createClass(MessagingComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {// this.messagingService.getAll().subscribe(returnNames => {
+            //   this.usernames = returnNames.docs;
+            // });
+          }
         }]);
 
         return MessagingComponent;
       }();
 
       MessagingComponent.ɵfac = function MessagingComponent_Factory(t) {
-        return new (t || MessagingComponent)();
+        return new (t || MessagingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_messaging_service__WEBPACK_IMPORTED_MODULE_1__["MessagingService"]));
       };
 
       MessagingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -345,6 +370,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"]],
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21lc3NhZ2luZy9tZXNzYWdpbmcuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/
@@ -358,7 +384,9 @@
             styleUrls: ['./messaging.component.css']
           }]
         }], function () {
-          return [];
+          return [{
+            type: _services_messaging_service__WEBPACK_IMPORTED_MODULE_1__["MessagingService"]
+          }];
         }, null);
       })();
       /***/
@@ -439,6 +467,95 @@
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
           }]
         }], null, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "xEyX":
+    /*!************************************************!*\
+      !*** ./src/app/_services/messaging.service.ts ***!
+      \************************************************/
+
+    /*! exports provided: MessagingService */
+
+    /***/
+    function xEyX(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "MessagingService", function () {
+        return MessagingService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../../environments/environment */
+      "AytR");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+
+      var MessagingService = /*#__PURE__*/function () {
+        function MessagingService(httpClient) {
+          _classCallCheck(this, MessagingService);
+
+          this.httpClient = httpClient;
+        }
+
+        _createClass(MessagingService, [{
+          key: "getAll",
+          value: function getAll() {
+            return this.httpClient.get("".concat(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl, "/messaging"));
+          }
+        }, {
+          key: "create",
+          value: function create(newUser) {
+            return this.httpClient.post("".concat(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl, "/messaging"), {
+              users: newUser
+            });
+          }
+        }]);
+
+        return MessagingService;
+      }();
+
+      MessagingService.ɵfac = function MessagingService_Factory(t) {
+        return new (t || MessagingService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
+      };
+
+      MessagingService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: MessagingService,
+        factory: MessagingService.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MessagingService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+          }];
+        }, null);
       })();
       /***/
 
